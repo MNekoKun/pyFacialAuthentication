@@ -1,2 +1,6 @@
-img/
+__pycache__/
 test.py
+password.jpg
+password.png
+webcam.jpg
+webcam.png
