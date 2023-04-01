@@ -19,11 +19,13 @@ def check_face():
         sys.exit(1)
     elif len(password_faces) > 1:
         print(colors.WARNING + colors.BOLD + "WARNING: " + colors.DEFAULT + colors.WARNING + "More than one face found" + colors.DEFAULT)
-        password_face_index = int(input("Which face do you want to use?\n>"))
+        password_face_index = int(input("Which face do you want to use? >"))
         password_face_index -= 1
+        if 0>password_face_index or password_face_index>=len(password_faces):
+            print(colors.FAIL + colors.BOLD + "Invalid index" + colors.DEFAULT)
+            sys.exit(1)
     else:
         password_face_index = 0
-    password_face_encoding = password_faces[password_face_index]
     
     print("Getting webcam image... ", end="")
     try:
